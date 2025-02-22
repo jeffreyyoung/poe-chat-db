@@ -22,7 +22,7 @@ function asyncPoeCall(json) {
       }
   });
   try {
-    await window.Poe.sendUserMessage(JSON.stringify(json));
+    await window.Poe.sendUserMessage(JSON.stringify(json), { handler: id, stream: false });
   } catch (e) {
     deferred.reject(e);
   }
