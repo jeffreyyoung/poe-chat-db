@@ -30,7 +30,7 @@ const cache = new Map();
             });
             try {
                 console.log('Sending message to ChatDB1:', JSON.stringify(json));
-                await window.Poe.sendUserMessage("@ChatDB1 " + JSON.stringify(json), { handler: id, stream: false });
+                await window.Poe.sendUserMessage("@ChatDB1 " + JSON.stringify(json), { handler: id, openChat: false, stream: false });
             } catch (e) {
                 console.error('Error sending message to ChatDB1:', e);
                 deferred.reject(e);
