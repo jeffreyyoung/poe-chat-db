@@ -1,7 +1,7 @@
 const cache = new Map();
 
 
-function asyncPoeCall(json) {
+async function asyncPoeCall(json) {
   const id = Math.random() + '';
   const deferred = createDeferred();
   window.Poe.registerHandler(id, (data) => {
