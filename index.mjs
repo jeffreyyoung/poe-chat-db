@@ -47,8 +47,8 @@ async function asyncPoeCall(json) {
     });
 
     try {
-        console.log('Sending message to ChatDB1:', JSON.stringify(json));
-        await window.Poe.sendUserMessage("@ChatDB1 " + JSON.stringify(json), { 
+        console.log('Sending message to SlowDB:', JSON.stringify(json));
+        await window.Poe.sendUserMessage("@SlowDB " + JSON.stringify(json), { 
             handler: id, 
             openChat: false, 
             stream: false 
@@ -56,7 +56,7 @@ async function asyncPoeCall(json) {
     } catch (e) {
         clearTimeout(timeout); // Clear timeout on error
         window.Poe.registerHandler(id, () => {}); // Clean up handler
-        console.error('Error sending message to ChatDB1:', e);
+        console.error('Error sending message to SlowDB:', e);
         deferred.reject(e);
     }
 
